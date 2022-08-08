@@ -1,0 +1,16 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  margin:0;
+  width: 100%;
+  height: 50px;
+  background-color: slategrey;
+  color: lightgrey;
+  text-align: right;
+  font-size: small;
+}
+
+.footerText{
+display: block;
+margin: 20px 60px;
+}

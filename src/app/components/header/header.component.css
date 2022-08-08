@@ -1,0 +1,55 @@
+header {
+  position: fixed;
+  top: 0;
+  margin:0;
+  width: 100%;
+  height: 50px;
+  background-color: slategrey;
+  color: lightgrey;
+  text-align: right;
+  font-size: medium;
+}
+
+.video-span{
+  position: fixed;
+  top: 0;
+  left: 100px;
+  margin-top: 15px;
+  background: linear-gradient(45deg, blue, red);
+}
+
+.user-span{
+  position: fixed;
+  top: 0;
+  right: 200px;
+  margin-top: 15px;
+}
+
+.logoff-span{
+  position: fixed;
+  top: 0;
+  right: 60px;
+  margin-top: 15px;
+}
+
+#logOffButton{
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: lightgrey;
+}
+
+.video-icon{
+
+}
+
+.user-icon{
+
+}
+
+.logoff-icon{
+
+}
