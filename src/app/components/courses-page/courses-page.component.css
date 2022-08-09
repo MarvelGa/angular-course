@@ -1,23 +1,13 @@
 .coursesList{
   background-color: whitesmoke;
   width: 100%;
-  height: 550px;
+  height: 100%;
   margin: 0px;
 
 }
 
 .cards{
- /* margin: 0 auto;*/
-  margin: 0 95px;
-}
-/*
-.card-title{
-  margin-right: 60px;
-}
-*/
-.clock-cl{
-  color:red;
-  background-color: darkgreen;
+  margin: 0px 95px 15px;
 }
 
 .icons{
@@ -34,7 +24,7 @@
 }
 
 .times-info{
-  margin: 0 auto;
+  margin: 0 270px 0 0;
 }
 
 .edit-button{
