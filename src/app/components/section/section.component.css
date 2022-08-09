@@ -1,5 +1,20 @@
 #searchForm{
   width: 600px;
   display: block;
-  margin: 0 auto;
+  margin: 0px 90px;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+.search-bar{
+  background-color: whitesmoke;
+}
+
+.add-course-bar{
+  background-color: whitesmoke;
+
+}
+.addCourse-button{
+  position: fixed;
+  color: white;
+  right: 200px;
 }
