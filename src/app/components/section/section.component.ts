@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-section',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent implements OnInit {
+  searchValue: string = '';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  setSearchValue(newSearchValue: string): void {
+    this.searchValue = newSearchValue;
+  }
+
+  printLog(): void{
+    console.log(this.searchValue);
   }
 
 }
