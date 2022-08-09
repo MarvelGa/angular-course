@@ -2,7 +2,10 @@
   <app-header></app-header>
   <app-logo></app-logo>
   <app-section></app-section>
-  <app-courses-page>
+  <app-courses-page
+    [coursesList]="coursesList"
+    (trackByIds)="trackByIds($event)"
+  >
   </app-courses-page>
   <app-footer></app-footer>
 </div>

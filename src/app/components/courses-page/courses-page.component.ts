@@ -9,7 +9,8 @@ import {CourseInterface} from "../../types/course.interface";
 })
 
 export class CoursesPageComponent implements OnInit {
-
+   @Input() coursesList: CourseInterface[] | undefined
+  trackByIds: any;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,18 +1,17 @@
 <div class="coursesList">
-  <div class=" card cards" style="width: 100rem;">
+  <div *ngFor="let course of coursesList; trackBy:trackByIds"  class="card cards" style="width: 100rem;">
     <div class="card-body">
       <div class="d-flex justify-content-between">
-        <h5 class="mb-1 card-title">List group</h5>
+        <h5 class="mb-1 card-title">{{course.title}}</h5>
         <div class="mb-2 times-info">
-        <small class="course-duration"><i class="fa-regular fa-clock icons"></i> 8h 2min</small>
-        <small class="course-time"><i class="fa-regular fa-calendar-days"></i> 9 Nov, 2021</small>
+        <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.creationDate}}</small>
+        <small class="course-time"><i class="fa-regular fa-calendar-days"></i> {{course.duration}}</small>
         </div>
       </div>
       <div class="d-flex justify-content-between">
-      <p class="w-100 card-text">With supporting text below as a natural lead-in c vcxxxxxxxxxxxxxxxxtdfdsssssssssssssssssssss sssssssssssssssssssssssssssssssssss sssssssssssssssssssssss  ssssssssssssssssssss fffffffffffff ffffffffff fffffffffffffffffffffffffffffodfssssdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff additionalgd dsgggggggggggggggggggggggggggggg contentsfddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
-        <div class="15 edit-button" >
+      <p class="w-100 card-text">{{course.description}}</p>
+        <div class="15 edit-button">
           <button type="button" class="btn btn-info edit-button"><i class="fa-solid fa-pen"></i> Edite</button>
-
       </div>
         <div class="delete-button" >
           <a href="#" class=" btn btn-info delete-button"><i class="fa-solid fa-trash-can"></i> Delete</a>
@@ -20,5 +19,5 @@
     </div>
     </div>
   </div>
-
+  <br />
 </div>
