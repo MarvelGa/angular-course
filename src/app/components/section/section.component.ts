@@ -22,4 +22,7 @@ export class SectionComponent implements OnInit {
     console.log(this.searchValue);
   }
 
+  printInConsoleLog() {
+    console.log('from Load more');
+  }
 }
