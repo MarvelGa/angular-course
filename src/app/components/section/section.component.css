@@ -11,10 +11,10 @@
 
 .add-course-bar{
   background-color: whitesmoke;
-
 }
 .addCourse-button{
-  position: fixed;
+  position: relative;
   color: white;
-  right: 200px;
+  display: block;
+  right: -1570px;
 }
