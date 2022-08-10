@@ -5,6 +5,8 @@
   <app-courses-page
     [coursesList]="coursesList"
     (trackByIds)="trackByIds($event)"
+    (deleteCourse)="deleteCourse($event)"
+    (editCourse)="editCourse($event)"
   >
   </app-courses-page>
   <app-footer></app-footer>

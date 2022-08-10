@@ -50,4 +50,13 @@ export class AppComponent {
   trackByIds (item: any) {
     return item.id;
   };
+
+    deleteCourse(id:string) {
+      console.log(`delete course this id=`,id);
+     // this.coursesList = this.coursesList.filter(course=> course.id !==id);
+  }
+
+    editCourse(id:string) {
+      console.log(`edit course this id=`,id);
+    }
 }
