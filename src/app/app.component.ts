@@ -47,9 +47,9 @@ export class AppComponent {
 
   ]
 
-  trackByIds (item: any) {
+/*  trackByIds (item: any) {
     return item.id;
-  };
+  };*/
 
     deleteCourse(id:string) {
       console.log(`delete course this id=`,id);

@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SectionComponent implements OnInit {
   searchValue: string = '';
-
+  coursesTitle = "Courses";
   constructor() {
   }
 

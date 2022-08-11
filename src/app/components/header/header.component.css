@@ -10,14 +10,6 @@ header {
   font-size: medium;
 }
 
-.video-span{
-  position: fixed;
-  top: 0;
-  left: 100px;
-  margin-top: 15px;
-  background: linear-gradient(45deg, blue, red);
-}
-
 .user-span{
   position: fixed;
   top: 0;

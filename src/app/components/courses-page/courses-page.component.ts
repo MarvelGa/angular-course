@@ -12,7 +12,7 @@ export class CoursesPageComponent implements OnInit {
   @Input() coursesList: CourseInterface[] | undefined
   @Output() deleteCourse = new EventEmitter<string>();
   @Output() editCourse = new EventEmitter<string>();
-  trackByIds: any;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +20,10 @@ export class CoursesPageComponent implements OnInit {
 
   printInConsoleLog(value :string) {
     console.log(value);
+  }
+
+  trackByIds(index: number, course: CourseInterface):string  {
+    return course.id;
   }
 
 }
