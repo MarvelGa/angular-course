@@ -1,6 +1,5 @@
+<h6 class="coursesTitle">{{coursesTitle}}</h6>
 <div class="search-bar">
-  <br />
-  <h6 class="coursesTitle">{{coursesTitle}}</h6>
   <br/>
   <form (submit)="printLog()" id="searchForm">
     <div class="row">
@@ -14,7 +13,6 @@
           [(ngModel)]="searchValue"
         />
       </div>
-
       <div class="col-3">
         <input type="submit" value="Search" class="form-control btn btn-primary"/>
       </div>
@@ -23,7 +21,9 @@
 </div>
 
 <div class="add-course-bar">
-  <button type="button" class="btn btn-info addCourse-button" (click)="printInConsoleLog('Add course button')"><i class="fa-solid fa-plus"></i> Add course</button>
+  <button type="button" class="btn btn-info addCourse-button" (click)="printInConsoleLog('Add course button')"><i
+    class="fa-solid fa-plus"></i> Add course
+  </button>
   <br/>
 </div>
 
