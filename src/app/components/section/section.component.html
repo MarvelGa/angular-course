@@ -1,42 +1,24 @@
-<h6 class="coursesTitle">{{coursesTitle}}</h6>
-<div class="search-bar">
-  <br/>
-  <div class="row">
-    <div class="col-6">
-      <form (submit)="printLog()" id="searchForm">
-        <div class="row">
-          <div class="col-5">
-            <input
-              type="search"
-              name="searchValue"
-              placeholder="Text to search"
-              class="form-control"
-              autofocus
-              [(ngModel)]="searchValue"
-            />
-          </div>
-          <div class="col-3">
-            <input type="submit" value="Search" class="form-control btn btn-primary"/>
-          </div>
-        </div>
-      </form>
-    </div>
+<div class="container">
+  <p class="coursesTitle">{{coursesTitle}}</p>
+  <div>
+    <form (submit)="printLog()" id="searchForm">
+      <input
+        type="search"
+        name="searchValue"
+        placeholder="Text to search"
+        class="input-field"
+        autofocus
+        [(ngModel)]="searchValue"
+      />
+      <input type="submit" value="Search" class="submit-search-button"/>
+    </form>
+    <br/>
+    <br/>
+
+  </div>
+  <div class="button-container">
+    <button type="button" class="addCourse-button" (click)="printInConsoleLog('Add course button')">
+      <i class="fa-solid fa-plus"></i> Add course
+    </button>
   </div>
 </div>
-
-<div class="row">
-  <div class="col add-course-bar">
-    <div class="add-button-row">
-      <button type="button" class="btn btn-info addCourse-button mr-5" (click)="printInConsoleLog('Add course button')">
-        <i
-          class="fa-solid fa-plus"></i> Add course
-      </button>
-      <br/>
-    </div>
-  </div>
-  <br/>
-</div>
-
-
-
-

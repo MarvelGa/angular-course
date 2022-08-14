@@ -1,35 +1,33 @@
-<div class="coursesList">
+<div class="container">
   <div *ngFor="let course of coursesList; trackBy:trackByIds">
-    <div class="row rows">
-      <div class="col-7 m-10">
-        <h4 class="card-title">{{course.title}}</h4>
+    <div class="coursesList">
+      <div class="courseInfo">
+        <span class="card-title">{{course.title}}</span>
+        <div class="courseDataTime">
+          <small class="course-creationDate"><i class="fa-regular fa-clock icons"></i> {{course.creationDate}}</small>
+          <small class="course-duration"><i class="fa-regular fa-calendar-days"></i> {{course.duration}}</small>
+        </div>
       </div>
-      <div class="col-5">
-        <small class="course-duration p-5"><i class="fa-regular fa-clock icons"></i> {{course.creationDate}}</small>
-        <small class="course-time"><i class="fa-regular fa-calendar-days"></i> {{course.duration}}</small>
-      </div>
-      <div class="col-10">
-        <p class="">{{course.description}}</p>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-info edit-button m-2" (click)="editCourse.emit(course.id)"><i
-          class="fa-solid fa-pen"></i> Edite
-        </button>
-        <a href="#" class=" btn btn-info delete-button" (click)="deleteCourse.emit(course.id)"><i
-          class="fa-solid fa-trash-can"></i> Delete</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col loads">
-      <div class="load-more p-2">
-        <a href="#" (click)="printInConsoleLog('Log more')">Load more</a>
+      <div class="description-and-buttons">
+        <span class="course-description">{{course.description}}</span>
+        <div class="edit-button-div">
+          <button type="button" class="edit-button" (click)="editCourse.emit(course.id)"><i
+            class="fa-solid fa-pen"></i> Edite
+          </button>
+        </div>
+        <div class="delete-button-div">
+          <button type="button" class="delete-button" (click)="deleteCourse.emit(course.id)"><i
+            class="fa-solid fa-trash-can"></i> Delete
+          </button>
+        </div>
       </div>
     </div>
+    <br/>
   </div>
-  <br/>
+  <div class="load-more">
+    <a href="#" (click)="printInConsoleLog('Log more')">Load more</a>
+  </div>
   <br/>
   <br/>
 </div>
-
 
