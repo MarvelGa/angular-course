@@ -10,10 +10,14 @@ import {CourseInterface} from "../../types/course.interface";
 
 export class CoursesPageComponent implements OnInit {
   @Input() coursesList: CourseInterface[] | undefined
+  @Input() isCoursesListNotEmpty: boolean | undefined
   @Output() deleteCourse = new EventEmitter<string>();
   @Output() editCourse = new EventEmitter<string>();
 
-  constructor() { }
+  noCoursesMessage='NO DATA, FEEL FREE TO ADD NEW COURSE';
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

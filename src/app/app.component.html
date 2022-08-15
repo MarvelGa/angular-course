@@ -2,6 +2,7 @@
   <app-header></app-header>
   <app-section></app-section>
   <app-courses-page
+    [isCoursesListNotEmpty]="isCoursesListNotEmpty"
     [coursesList]="coursesList"
     (deleteCourse)="deleteCourse($event)"
     (editCourse)="editCourse($event)"

@@ -7,13 +7,15 @@
 .edit-button-div {
   margin: 3% 10px 3% 50px;
   width: fit-content;
+}
 
+.noDataMessage{
+  margin: 5% 0 38%;
 }
 
 .delete-button-div {
   margin: 3% 15px 3% 20px;
   width: fit-content;
-
 }
 
 .description-and-buttons button {
@@ -43,6 +45,10 @@
   background-color: white;
   padding: 30px 15px;
   border-radius: 5px;
+}
+
+.noDataMessage {
+  text-align: center;
 }
 
 .card-title {
@@ -79,3 +85,4 @@
   padding: 10px;
   border-radius: 10px;
 }
+
