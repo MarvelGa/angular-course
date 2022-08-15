@@ -9,10 +9,21 @@ import {CourseInterface} from "../../types/course.interface";
 })
 
 export class CoursesPageComponent implements OnInit {
+  @Input() coursesList: CourseInterface[] | undefined
+  @Output() deleteCourse = new EventEmitter<string>();
+  @Output() editCourse = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  printInConsoleLog(value :string) {
+    console.log(value);
+  }
+
+  trackByIds(index: number, course: CourseInterface):string  {
+    return course.id;
   }
 
 }

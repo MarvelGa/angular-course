@@ -1,0 +1,9 @@
+footer{
+  background-color: slategrey;
+}
+
+.container{
+  margin: 0 auto;
+  justify-content: right;
+  padding: 15px;
+}

@@ -1,1 +1,24 @@
-<p>section works!</p>
+<div class="container">
+  <p class="coursesTitle">{{coursesTitle}}</p>
+  <div>
+    <form (submit)="printLog()" id="searchForm">
+      <input
+        type="search"
+        name="searchValue"
+        placeholder="Text to search"
+        class="input-field"
+        autofocus
+        [(ngModel)]="searchValue"
+      />
+      <input type="submit" value="Search" class="submit-search-button"/>
+    </form>
+    <br/>
+    <br/>
+
+  </div>
+  <div class="button-container">
+    <button type="button" class="addCourse-button" (click)="printInConsoleLog('Add course button')">
+      <i class="fa-solid fa-plus"></i> Add course
+    </button>
+  </div>
+</div>
