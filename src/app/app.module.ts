@@ -8,6 +8,7 @@ import { SectionComponent } from './components/section/section.component';
 import { CoursesPageComponent } from './components/courses-page/courses-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule} from '@angular/forms';
+import {SetPlateBorderColorDirective} from "./components/courses-page/set-plate-border-color.directive";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule} from '@angular/forms';
     LogoComponent,
     SectionComponent,
     CoursesPageComponent,
-    FooterComponent
+    FooterComponent,
+    SetPlateBorderColorDirective
   ],
   imports: [
     BrowserModule,

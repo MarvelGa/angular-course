@@ -58,12 +58,12 @@
 
 .course-creationDate {
   color: lightgrey;
-  margin: 0 10px 0 0;
+  margin: 0 270px 0 15px;
 }
 
 .course-duration {
   color: lightgrey;
-  margin: 0 270px 0 15px;
+  margin: 0 10px 0 0;
 }
 
 .course-description {

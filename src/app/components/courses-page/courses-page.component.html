@@ -1,11 +1,11 @@
 <div class="container">
   <div *ngFor="let course of coursesList; trackBy:trackByIds">
-    <div class="coursesList">
+    <div class="coursesList" [setBorderColor]= course.creationDate>
       <div class="courseInfo">
         <span class="card-title">{{course.title}}</span>
         <div class="courseDataTime">
-          <small class="course-creationDate"><i class="fa-regular fa-clock icons"></i> {{course.creationDate}}</small>
-          <small class="course-duration"><i class="fa-regular fa-calendar-days"></i> {{course.duration}}</small>
+          <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration}}</small>
+          <small class="course-creationDate"><i class="fa-regular fa-calendar-days"></i> {{course.creationDate}}</small>
         </div>
       </div>
       <div class="description-and-buttons">
