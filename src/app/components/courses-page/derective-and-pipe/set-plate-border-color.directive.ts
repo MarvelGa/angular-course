@@ -1,13 +1,13 @@
 import {Directive, ElementRef, Input} from "@angular/core";
 
 @Directive({
-  selector: '[setBorderColor]'
+  selector: '[appToBorderColor]'
 })
 export class SetPlateBorderColorDirective {
   constructor(private element: ElementRef) {
   }
 
-  @Input() set setBorderColor(creationDate: any) {
+  @Input() set appToBorderColor(creationDate: any) {
     let numberOfDaysToMinus = 14;
     let currentDate: Date = new Date();
     let parsedCreationDate = new Date(parseInt(creationDate));
