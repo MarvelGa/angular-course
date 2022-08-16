@@ -1,6 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {UserInterface} from "../../types/user.interface";
-import {CourseInterface} from "../../types/course.interface";
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import { UserInterface } from "../../types/user.interface";
+import { CourseInterface } from "../../types/course.interface";
+import { MessageService } from "../../MessageService/message.service";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-courses-page',
@@ -8,7 +10,7 @@ import {CourseInterface} from "../../types/course.interface";
   styleUrls: ['./courses-page.component.css']
 })
 
-export class CoursesPageComponent implements OnInit {
+export class CoursesPageComponent implements OnInit, OnDestroy {
   @Input() coursesList: CourseInterface[] | undefined
   @Input() isCoursesListNotEmpty: boolean | undefined
   @Output() deleteCourse = new EventEmitter<string>();
@@ -16,10 +18,18 @@ export class CoursesPageComponent implements OnInit {
 
   noCoursesMessage='NO DATA, FEEL FREE TO ADD NEW COURSE';
 
-  constructor() {
+  searchValue: String | undefined;
+  subscription: Subscription | undefined;
+
+  constructor(private message: MessageService) {
   }
 
   ngOnInit(): void {
+    this.subscription = this.message.currentMessage.subscribe(message => this.searchValue = message)
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
   printInConsoleLog(value :string) {
