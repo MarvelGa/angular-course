@@ -86,3 +86,11 @@
   border-radius: 10px;
 }
 
+.star{
+  color: gold;
+  margin-left: 10px;
+}
+
+.changeBackground{
+  background-color: burlywood;
+}
