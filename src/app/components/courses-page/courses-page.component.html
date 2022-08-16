@@ -1,6 +1,6 @@
 <div *ngIf="isCoursesListNotEmpty; else noDataMessage">
   <div class="container">
-    <div *ngFor="let course of coursesList; trackBy:trackByIds">
+    <div *ngFor="let course of coursesList | orderBy; trackBy:trackByIds">
       <div class="coursesList" [setBorderColor]=course.creationDate [ngClass]="{changeBackground: course.topRated}">
         <div class="courseInfo">
           <div>
@@ -8,8 +8,10 @@
             <span *ngIf="course.topRated" class="star"><i class="fa-solid fa-star"></i></span>
           </div>
           <div class="courseDataTime">
-            <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration | duration}}</small>
-            <small class="course-creationDate"><i class="fa-regular fa-calendar-days"></i> {{course.creationDate}}
+            <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration | duration}}
+            </small>
+            <small class="course-creationDate"><i
+              class="fa-regular fa-calendar-days"></i> {{course.creationDate | toDatetime}}
             </small>
           </div>
         </div>
