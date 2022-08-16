@@ -9,6 +9,7 @@ import { CoursesPageComponent } from './components/courses-page/courses-page.com
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule} from '@angular/forms';
 import {SetPlateBorderColorDirective} from "./components/courses-page/set-plate-border-color.directive";
+import {DurationPipe} from "./components/courses-page/duration.pipe";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SetPlateBorderColorDirective} from "./components/courses-page/set-plate-
     SectionComponent,
     CoursesPageComponent,
     FooterComponent,
-    SetPlateBorderColorDirective
+    SetPlateBorderColorDirective,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

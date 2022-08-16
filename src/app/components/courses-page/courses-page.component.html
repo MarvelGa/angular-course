@@ -4,11 +4,11 @@
       <div class="coursesList" [setBorderColor]=course.creationDate [ngClass]="{changeBackground: course.topRated}">
         <div class="courseInfo">
           <div>
-            <span class="card-title">{{course.title}}</span>
+            <span class="card-title">{{course.title | uppercase }}</span>
             <span *ngIf="course.topRated" class="star"><i class="fa-solid fa-star"></i></span>
           </div>
           <div class="courseDataTime">
-            <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration}}</small>
+            <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration | duration}}</small>
             <small class="course-creationDate"><i class="fa-regular fa-calendar-days"></i> {{course.creationDate}}
             </small>
           </div>
