@@ -1,7 +1,8 @@
 export interface CourseInterface  {
   id: string
   title: string
-  creationDate: string
+  creationDate: any
   duration : string
   description: string
+  topRated: boolean
 }

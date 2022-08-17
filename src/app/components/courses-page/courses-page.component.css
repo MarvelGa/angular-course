@@ -7,13 +7,15 @@
 .edit-button-div {
   margin: 3% 10px 3% 50px;
   width: fit-content;
+}
 
+.noDataMessage{
+  margin: 5% 0 38%;
 }
 
 .delete-button-div {
   margin: 3% 15px 3% 20px;
   width: fit-content;
-
 }
 
 .description-and-buttons button {
@@ -45,6 +47,10 @@
   border-radius: 5px;
 }
 
+.noDataMessage {
+  text-align: center;
+}
+
 .card-title {
   font-size: 150%;
   font-weight: 700;
@@ -58,12 +64,12 @@
 
 .course-creationDate {
   color: lightgrey;
-  margin: 0 10px 0 0;
+  margin: 0 270px 0 15px;
 }
 
 .course-duration {
   color: lightgrey;
-  margin: 0 270px 0 15px;
+  margin: 0 10px 0 0;
 }
 
 .course-description {
@@ -78,4 +84,13 @@
   text-align: center;
   padding: 10px;
   border-radius: 10px;
+}
+
+.star{
+  color: gold;
+  margin-left: 10px;
+}
+
+.changeBackground{
+  background-color: burlywood;
 }

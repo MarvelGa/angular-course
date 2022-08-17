@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   title = 'my-app';
   coursesList: CourseInterface[] = [];
 
+  isCoursesListNotEmpty:boolean = coursesList.length>0;
+
   ngOnInit(): void {
     this.coursesList = coursesList;
   }

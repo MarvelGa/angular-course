@@ -1,33 +1,48 @@
-<div class="container">
-  <div *ngFor="let course of coursesList; trackBy:trackByIds">
-    <div class="coursesList">
-      <div class="courseInfo">
-        <span class="card-title">{{course.title}}</span>
-        <div class="courseDataTime">
-          <small class="course-creationDate"><i class="fa-regular fa-clock icons"></i> {{course.creationDate}}</small>
-          <small class="course-duration"><i class="fa-regular fa-calendar-days"></i> {{course.duration}}</small>
+<div *ngIf="isCoursesListNotEmpty && (coursesList | filterCourse : searchValue).length!==0 ; else noDataMessage">
+  <div class="container">
+    <div *ngFor="let course of coursesList | filterCourse: searchValue | orderBy; trackBy:trackByIds">
+      <div class="coursesList" [appToBorderColor]=course.creationDate [ngClass]="{changeBackground: course.topRated}">
+        <div class="courseInfo">
+          <div>
+            <span class="card-title">{{course.title | uppercase }}</span>
+            <span *ngIf="course.topRated" class="star"><i class="fa-solid fa-star"></i></span>
+          </div>
+          <div class="courseDataTime">
+            <small class="course-duration"><i class="fa-regular fa-clock icons"></i> {{course.duration | duration}}
+            </small>
+            <small class="course-creationDate"><i
+              class="fa-regular fa-calendar-days"></i> {{course.creationDate | toDatetime}}
+            </small>
+          </div>
+        </div>
+        <div class="description-and-buttons">
+          <span class="course-description">{{course.description}}</span>
+          <div class="edit-button-div">
+            <button type="button" class="edit-button" (click)="editCourse.emit(course.id)"><i
+              class="fa-solid fa-pen"></i> Edite
+            </button>
+          </div>
+          <div class="delete-button-div">
+            <button type="button" class="delete-button" (click)="deleteCourse.emit(course.id)"><i
+              class="fa-solid fa-trash-can"></i> Delete
+            </button>
+          </div>
         </div>
       </div>
-      <div class="description-and-buttons">
-        <span class="course-description">{{course.description}}</span>
-        <div class="edit-button-div">
-          <button type="button" class="edit-button" (click)="editCourse.emit(course.id)"><i
-            class="fa-solid fa-pen"></i> Edite
-          </button>
-        </div>
-        <div class="delete-button-div">
-          <button type="button" class="delete-button" (click)="deleteCourse.emit(course.id)"><i
-            class="fa-solid fa-trash-can"></i> Delete
-          </button>
-        </div>
-      </div>
+      <br/>
+    </div>
+    <div class="load-more">
+      <a href="#" (click)="printInConsoleLog('Log more')">Load more</a>
     </div>
     <br/>
+    <br/>
   </div>
-  <div class="load-more">
-    <a href="#" (click)="printInConsoleLog('Log more')">Load more</a>
-  </div>
-  <br/>
-  <br/>
 </div>
 
+<ng-template #noDataMessage>
+  <div class="container">
+    <div class="coursesList noDataMessage">
+      <h3>{{noCoursesMessage}}</h3>
+    </div>
+  </div>
+</ng-template>
