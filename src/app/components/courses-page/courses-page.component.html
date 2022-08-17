@@ -1,4 +1,4 @@
-<div *ngIf="isCoursesListNotEmpty; else noDataMessage">
+<div *ngIf="isCoursesListNotEmpty && (coursesList | filterCourse : searchValue).length!==0 ; else noDataMessage">
   <div class="container">
     <div *ngFor="let course of coursesList | filterCourse: searchValue | orderBy; trackBy:trackByIds">
       <div class="coursesList" [appToBorderColor]=course.creationDate [ngClass]="{changeBackground: course.topRated}">
