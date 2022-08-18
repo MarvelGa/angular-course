@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserInterface} from "./types/user.interface";
-import { CourseInterface} from "./types/course.interface";
-import { CourseService } from "./services/course.service";
+import {CourseInterface} from "./types/course.interface";
+import {CourseService} from "./services/course.service";
 
 @Component({
   selector: 'app-root',
@@ -11,19 +11,18 @@ import { CourseService } from "./services/course.service";
 export class AppComponent implements OnInit {
   title = 'my-app';
   coursesList: CourseInterface[] = [];
-  isCoursesListNotEmpty: boolean | undefined ;
+  isCoursesListNotEmpty: boolean | undefined;
 
   constructor(private courseService: CourseService) {
   }
 
   ngOnInit(): void {
-    this.coursesList = this.courseService.getList() ;
-    this.isCoursesListNotEmpty = this.courseService.getList().length>0;
+    this.coursesList = this.courseService.getList();
+    this.isCoursesListNotEmpty = this.courseService.getList().length > 0;
   }
 
   deleteCourse(id: string) {
-    console.log(`delete course this id=`, id);
-    // this.coursesList = this.coursesList.filter(course=> course.id !==id);
+    this.coursesList = this.courseService.removeItem(id);
   }
 
   editCourse(id: string) {

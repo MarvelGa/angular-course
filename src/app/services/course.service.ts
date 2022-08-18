@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { CourseInterface } from "../types/course.interface";
-import { coursesList} from "../../assets/fake-data";
+import {Injectable} from "@angular/core";
+import {CourseInterface} from "../types/course.interface";
+import {coursesList} from "../../assets/fake-data";
 
 @Injectable({
   providedIn: 'root'
@@ -9,28 +9,31 @@ import { coursesList} from "../../assets/fake-data";
 export class CourseService {
   coursesList: CourseInterface[] = [];
 
-
   constructor() {
-   this.coursesList=coursesList;
+    this.coursesList = coursesList;
   }
 
-  getList(){
+  getList() {
     return this.coursesList;
   }
 
-  createCourse(){
-
+  createCourse(course: CourseInterface) {
+    this.coursesList.push(course);
+    return this.getList();
   }
 
-  getItemById(){
-
+  getItemById(id: string) {
+    this.coursesList = this.coursesList.filter(el => el.id === id);
+    return this.getList();
   }
 
-  updateItem(){
-
+  updateItem(course: CourseInterface) {
+    this.coursesList = this.coursesList.map(elem => elem.id !== course.id ? elem : course);
+    return this.getList();
   }
 
-  removeItem(){
-
+  removeItem(id: string) {
+    this.coursesList = this.coursesList.filter(el => el.id !== id);
+    return this.getList();
   }
 }
