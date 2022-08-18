@@ -22,7 +22,10 @@ export class AppComponent implements OnInit {
   }
 
   deleteCourse(id: string) {
-    this.coursesList = this.courseService.removeItem(id);
+    let question = 'Do you really want to delete this course?';
+     if (confirm(question)){
+       this.coursesList = this.courseService.removeItem(id);
+     }
   }
 
   editCourse(id: string) {
