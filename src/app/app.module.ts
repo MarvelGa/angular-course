@@ -13,6 +13,7 @@ import {DurationPipe} from "./components/courses-page/derective-and-pipe/duratio
 import {TransformToDatetimePipe} from "./components/courses-page/derective-and-pipe/transform-to-datetime.pipe";
 import {OrderByCreationDatePipe} from "./components/courses-page/derective-and-pipe/order-by-creation-date.pipe";
 import {FilterSearchPipe} from "./components/courses-page/derective-and-pipe/filter-search.pipe";
+import { CourseService } from "./services/course.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {FilterSearchPipe} from "./components/courses-page/derective-and-pipe/fil
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

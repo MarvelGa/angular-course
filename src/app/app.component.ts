@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserInterface} from "./types/user.interface";
-import {CourseInterface} from "./types/course.interface";
-import {coursesList} from "../assets/fake-data"
+import { CourseInterface} from "./types/course.interface";
+import { CourseService } from "./services/course.service";
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,14 @@ import {coursesList} from "../assets/fake-data"
 export class AppComponent implements OnInit {
   title = 'my-app';
   coursesList: CourseInterface[] = [];
+  isCoursesListNotEmpty: boolean | undefined ;
 
-  isCoursesListNotEmpty:boolean = coursesList.length>0;
+  constructor(private courseService: CourseService) {
+  }
 
   ngOnInit(): void {
-    this.coursesList = coursesList;
+    this.coursesList = this.courseService.getList() ;
+    this.isCoursesListNotEmpty = this.courseService.getList().length>0;
   }
 
   deleteCourse(id: string) {
