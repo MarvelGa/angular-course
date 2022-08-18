@@ -15,6 +15,7 @@ import {OrderByCreationDatePipe} from "./derective-and-pipe/order-by-creation-da
 import {FilterSearchPipe} from "./derective-and-pipe/filter-search.pipe";
 import { CourseService } from "./services/course.service";
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import {AuthenticationDirective} from "./derective-and-pipe/authentication.directive";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     TransformToDatetimePipe,
     OrderByCreationDatePipe,
     FilterSearchPipe,
-    LoginPageComponent
+    LoginPageComponent,
+    AuthenticationDirective
   ],
   imports: [
     BrowserModule,

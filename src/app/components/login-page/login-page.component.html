@@ -1,17 +1,17 @@
 <div class="container">
   <div class="login-form">
-    <form action="#">
+    <form (submit)="login()" action="#">
       <p><strong>Login</strong></p>
       <div>
         <label for="email">
           E-mail:
         </label>
-        <input type="email" name="email" id="email" placeholder="Enter e-mail" required autofocus />
+        <input type="email" name="email" id="email" placeholder="Enter e-mail"  autocomplete="on" required autofocus/>
       </div>
-        <label for="password">
-          Password:
-        </label>
-        <input type="password" id="password" placeholder="Enter password" required />
+      <label for="password">
+        Password:
+      </label>
+      <input type="password" id="password" placeholder="Enter password"  autocomplete="on" required/>
       <div class="login-form-bottom">
         <a href="#">Forgot password?</a>
         <button type="submit">Login</button>
