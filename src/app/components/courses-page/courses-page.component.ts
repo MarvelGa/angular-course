@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import { UserInterface } from "../../types/user.interface";
 import { CourseInterface } from "../../types/course.interface";
-import { MessageService } from "../../message-service/message.service";
+import { MessageService } from "../../services/message.service";
 import { Subscription } from 'rxjs';
 
 @Component({
