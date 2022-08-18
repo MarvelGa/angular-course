@@ -14,6 +14,7 @@ import {TransformToDatetimePipe} from "./components/courses-page/derective-and-p
 import {OrderByCreationDatePipe} from "./components/courses-page/derective-and-pipe/order-by-creation-date.pipe";
 import {FilterSearchPipe} from "./components/courses-page/derective-and-pipe/filter-search.pipe";
 import { CourseService } from "./services/course.service";
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CourseService } from "./services/course.service";
     DurationPipe,
     TransformToDatetimePipe,
     OrderByCreationDatePipe,
-    FilterSearchPipe
+    FilterSearchPipe,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
