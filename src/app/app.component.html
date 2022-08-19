@@ -1,6 +1,6 @@
 <div class="app">
 
-  <div *appIsAuthenticated="!false">
+  <div *appIsAuthenticated="!isUserAuthenticated">
     <app-header></app-header>
     <app-section></app-section>
     <app-courses-page
@@ -13,9 +13,12 @@
     <app-footer></app-footer>
   </div>
 
-  <div *appIsAuthenticated="false">
+  <div *appIsAuthenticated="isUserAuthenticated">
     <app-header></app-header>
-    <app-login-page></app-login-page>
+    <app-login-page
+      (authenticationEvent)="authenticationRequest($event)"
+    >
+    </app-login-page>
     <app-footer></app-footer>
   </div>
 </div>

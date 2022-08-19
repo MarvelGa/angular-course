@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'my-app';
   coursesList: CourseInterface[] = [];
   isCoursesListNotEmpty: boolean | undefined;
-
+  isUserAuthenticated = false;
   constructor(private courseService: CourseService) {
   }
 
@@ -32,4 +32,7 @@ export class AppComponent implements OnInit {
     console.log(`edit course this id=`, id);
   }
 
+  authenticationRequest(isUserAuthenticated: boolean) {
+    this.isUserAuthenticated =isUserAuthenticated;
+  }
 }

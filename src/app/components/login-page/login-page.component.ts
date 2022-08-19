@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../../services/auth.service";
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-login-page',
@@ -7,7 +7,8 @@ import {AuthService} from "../../services/auth.service";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
+  @Output() authenticationEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  isUserAuthenticated = false;
   constructor(private authService: AuthService) {
   }
 
@@ -16,5 +17,7 @@ export class LoginPageComponent implements OnInit {
 
   login(): void {
     this.authService.login();
+    this.isUserAuthenticated = true;
+    this.authenticationEvent.emit(this.isUserAuthenticated);
   }
 }
