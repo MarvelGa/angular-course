@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from "../../services/auth.service";
 
 @Component({
@@ -7,6 +7,7 @@ import { AuthService } from "../../services/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input() isUserAuthenticated: boolean | undefined
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {

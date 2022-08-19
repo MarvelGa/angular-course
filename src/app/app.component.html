@@ -1,7 +1,8 @@
 <div class="app">
 
   <div *appIsAuthenticated="!isUserAuthenticated">
-    <app-header></app-header>
+    <app-header [isUserAuthenticated]="isUserAuthenticated"
+    ></app-header>
     <app-section></app-section>
     <app-courses-page
       [isCoursesListNotEmpty]="isCoursesListNotEmpty"
