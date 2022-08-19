@@ -8,7 +8,10 @@ import { AuthService } from "../../services/auth.service";
 })
 export class LoginPageComponent implements OnInit {
   @Output() authenticationEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   isUserAuthenticated = false;
+  email = '';
+  password = ''
   constructor(private authService: AuthService) {
   }
 
@@ -16,8 +19,10 @@ export class LoginPageComponent implements OnInit {
   }
 
   login(): void {
-    this.authService.login();
+    this.authService.login(this.email, this.password);
     this.isUserAuthenticated = true;
     this.authenticationEvent.emit(this.isUserAuthenticated);
+    console.log(this.email);
+    console.log(this.password);
   }
 }
