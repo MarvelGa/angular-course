@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
 export class AuthService {
   private readonly JWT_TOKEN = 'JWT_TOKEN';
   private readonly REFRESH_TOKEN = 'REFRESH_TOKEN';
-  userFakeListInStorage: any = JSON.parse(localStorage.getItem('setOfFakeUser') || '{}') || [];
+  userFakeListInStorage: any = JSON.parse(localStorage.getItem('setOfFakeUser') || '[]');
   currentUserEmail: string = '';
   isUserAuthenticated = false;
 
