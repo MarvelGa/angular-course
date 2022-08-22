@@ -1,0 +1,56 @@
+.container {
+  margin: 10% auto;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+  width: 20%;
+  font-size: 120%;
+  border-radius: 10px;
+}
+
+.login-form {
+  margin: 10px auto;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+  width: 90%;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 2px;
+}
+
+.login-form-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0;
+}
+
+a {
+  font-size: 70%;
+}
+
+#email, #password {
+  width: 96%;
+  height: 30px;
+  border-color: lightgrey;
+}
+
+button {
+  color: white;
+  padding: 10px 15px;
+  background-color: lightgrey;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+  width: 25%;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: darkgray;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+}

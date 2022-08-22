@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="login-form">
+    <form (submit)="login()" ngNativeValidate  action="#">
+      <p><strong>Login</strong></p>
+      <div>
+        <label for="email">
+          E-mail:
+        </label>
+        <input type="email" name="email" id="email" placeholder="Enter e-mail" [(ngModel)]="email" autocomplete="on"  autofocus required />
+      </div>
+      <label for="password">
+        Password:
+      </label>
+      <input type="password" id="password" name="password" placeholder="Enter password" [(ngModel)]="password" autocomplete="on" required/>
+      <div class="login-form-bottom">
+        <a href="#">Forgot password?</a>
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

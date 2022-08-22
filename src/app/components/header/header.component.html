@@ -1,9 +1,9 @@
 <header>
   <div class="container">
     <app-logo></app-logo>
-    <div class="login-logout">
-      <button class="login-logout-button"><i class="fa-solid fa-user-large"></i> User login</button>
-      <button class="login-logout-button"><i class="fa-solid fa-right-to-bracket"></i>Log off</button>
+    <div *ngIf="isUserAuthenticated" class="login-logout" >
+      <button class="login-logout-button" ><i class="fa-solid fa-user-large"></i> User login</button>
+      <button class="login-logout-button" (click)="logout()"><i class="fa-solid fa-right-to-bracket"></i>Log off</button>
     </div>
   </div>
 </header>
