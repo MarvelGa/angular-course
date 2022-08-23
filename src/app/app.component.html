@@ -1,5 +1,4 @@
 <!--<div class="app">-->
-  <router-outlet>
   <div *appIsAuthenticated="!isUserAuthenticated">
 
     <div *appIsRequiredNewCourse="IsNewCourseRequired">
@@ -21,7 +20,7 @@
     <div *appIsRequiredNewCourse="!IsNewCourseRequired">
       <app-header [isUserAuthenticated]="isUserAuthenticated"
       ></app-header>
-      <app-course-page></app-course-page>
+      <router-outlet></router-outlet>
       <app-footer></app-footer>
     </div>
 
@@ -35,7 +34,7 @@
     </app-login-page>
     <app-footer></app-footer>
   </div>
-  </router-outlet>
+
 <!--</div>-->
 
 
