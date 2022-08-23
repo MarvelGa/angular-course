@@ -1,38 +1,38 @@
 <div class="container">
-  <div class="new-course-form">
+  <form (submit)="addCourse()" class="new-course-form" ngNativeValidate>
     <p><strong>New course</strong></p>
     <div class="title to-row">
       <label nameFor="courseTitle">Title:</label> <small>*required</small>
     </div>
     <div>
-      <input type="text" name="courseTitle" id="courseTitle" placeholder="Text input"/>
+      <input type="text" name="courseTitle" id="courseTitle" placeholder="Text input" autocomplete="on"  required />
     </div>
     <div class="description to-row">
       <label for="courseDescription">Description:</label> <small>*required</small>
     </div>
     <div>
       <textarea placeholder="Add description" name="courseDescription" id="courseDescription" rows="5"
-                cols="20"></textarea>
+                cols="20" required></textarea>
     </div>
     <div class="duration">
       <label nameFor="duration">Duration:</label> <small>*required</small>
     </div>
     <div>
-      <input type="text" id="duration" placeholder="minutes"/>
+      <input type="text" id="duration" placeholder="minutes" autocomplete="on" required />
     </div>
     <div class="date">
       <label nameFor="date">Date:</label> <small>*required</small>
     </div>
-    <input type="datetime-local" id="date" placeholder="MM/DD/YYYY"/>
+    <input type="date" id="date" placeholder="MM/DD/YYYY" autocomplete="on" required />
     <div class="authors">
       <label nameFor="authors">Authors:</label> <small>*required</small>
     </div>
     <div>
-      <input type="text" id="authors" placeholder="Start typing"/>
+      <input type="text" id="authors" placeholder="Start typing" autocomplete="on" required />
     </div>
     <div class="button-section">
       <button type="reset" id="cancelButton"><strong>Cancel</strong></button>
       <button type="submit" id="saveButton"><strong>Save</strong></button>
     </div>
-  </div>
+  </form>
 </div>
