@@ -1,1 +1,38 @@
-<p>course-page works!</p>
+<div class="container">
+  <div class="new-course-form">
+    <p><strong>New course</strong></p>
+    <div class="title to-row">
+      <label nameFor="courseTitle">Title:</label> <small>*required</small>
+    </div>
+    <div>
+      <input type="text" name="courseTitle" id="courseTitle" placeholder="Text input"/>
+    </div>
+    <div class="description to-row">
+      <label for="courseDescription">Description:</label> <small>*required</small>
+    </div>
+    <div>
+      <textarea placeholder="Add description" name="courseDescription" id="courseDescription" rows="5"
+                cols="20"></textarea>
+    </div>
+    <div class="duration">
+      <label nameFor="duration">Duration:</label> <small>*required</small>
+    </div>
+    <div>
+      <input type="text" id="duration" placeholder="minutes"/>
+    </div>
+    <div class="date">
+      <label nameFor="date">Date:</label> <small>*required</small>
+    </div>
+    <input type="datetime-local" id="date" placeholder="MM/DD/YYYY"/>
+    <div class="authors">
+      <label nameFor="authors">Authors:</label> <small>*required</small>
+    </div>
+    <div>
+      <input type="text" id="authors" placeholder="Start typing"/>
+    </div>
+    <div class="button-section">
+      <button type="reset" id="cancelButton"><strong>Cancel</strong></button>
+      <button type="submit" id="saveButton"><strong>Save</strong></button>
+    </div>
+  </div>
+</div>

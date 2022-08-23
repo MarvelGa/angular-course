@@ -1,0 +1,106 @@
+.container {
+  margin: 5% auto;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+  width: 60%;
+  font-size: 150%;
+  border-radius: 10px;
+  line-height: 150%;
+}
+
+.new-course-form {
+  margin: 10px 20px 30px;
+}
+
+label {
+  font-size: 80%;
+}
+
+input {
+  height: 40px;
+}
+
+small {
+  font-size: 50%;
+}
+
+input, textarea {
+  border-color: lightgrey;
+}
+
+::placeholder {
+  padding: 10px;
+  color: lightgrey;
+}
+
+.duration, .date {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.authors {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+#authors {
+  width: 50%;
+}
+
+#duration, #date {
+  width: 25%;
+}
+
+.to-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#courseTitle, #courseDescription {
+  width: 99%;
+}
+
+.button-section {
+  display: flex;
+  justify-content: right;
+  margin-top: 5%;
+}
+
+button {
+  padding: 10px 10px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+  width: 15%;
+}
+
+#cancelButton {
+  margin-right: 3%;
+  color: black;
+  background-color: lightgrey;
+}
+
+#saveButton {
+  color: white;
+  background-color: mediumseagreen;
+}
+
+#cancelButton:hover {
+  cursor: pointer;
+  background-color: darkgray;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+}
+
+#saveButton:hover {
+  cursor: pointer;
+  background-color: green;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+}
+
+
