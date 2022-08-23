@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-page.component.css']
 })
 export class CoursePageComponent implements OnInit {
+  courseDescription:string = '';
+  duration: string = '';
+  date: any;
+  courseTitle: string='';
 
   constructor() { }
 
@@ -13,6 +17,8 @@ export class CoursePageComponent implements OnInit {
   }
 
   addCourse(){
+    console.log(this.courseDescription)
+    console.log(typeof this.date)
 
   }
 

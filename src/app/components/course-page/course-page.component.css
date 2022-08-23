@@ -46,6 +46,11 @@ input, textarea {
   width: 50%;
 }
 
+.duration-block span{
+  margin-left: 20px;
+  font-size: 70%;
+}
+
 #authors {
   width: 50%;
 }
