@@ -17,6 +17,7 @@ import { CourseService } from "./services/course.service";
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import {AuthenticationDirective} from "./derective-and-pipe/authentication.directive";
 import { CoursePageComponent } from './components/course-page/course-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CoursePageComponent } from './components/course-page/course-page.compon
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
