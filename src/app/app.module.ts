@@ -18,6 +18,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import {AuthenticationDirective} from "./derective-and-pipe/authentication.directive";
 import { CoursePageComponent } from './components/course-page/course-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NewCourseDirective } from "./derective-and-pipe/new-course.directive";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AppRoutingModule } from './app-routing.module';
     FilterSearchPipe,
     LoginPageComponent,
     AuthenticationDirective,
-    CoursePageComponent
+    CoursePageComponent,
+    NewCourseDirective
   ],
   imports: [
     BrowserModule,

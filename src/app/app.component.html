@@ -1,9 +1,13 @@
-<div class="app">
-
+<!--<div class="app">-->
+  <router-outlet>
   <div *appIsAuthenticated="!isUserAuthenticated">
+
+    <div *appIsRequiredNewCourse="IsNewCourseRequired">
     <app-header [isUserAuthenticated]="isUserAuthenticated"
     ></app-header>
-    <app-section></app-section>
+    <app-section
+      (newCourseRequiredEvent)="setIsNewCourseRequired($event)"
+    ></app-section>
     <app-courses-page
       [isCoursesListNotEmpty]="isCoursesListNotEmpty"
       [coursesList]="coursesList"
@@ -12,6 +16,15 @@
     >
     </app-courses-page>
     <app-footer></app-footer>
+    </div>
+
+    <div *appIsRequiredNewCourse="!IsNewCourseRequired">
+      <app-header [isUserAuthenticated]="isUserAuthenticated"
+      ></app-header>
+      <app-course-page></app-course-page>
+      <app-footer></app-footer>
+    </div>
+
   </div>
 
   <div *appIsAuthenticated="isUserAuthenticated">
@@ -22,7 +35,8 @@
     </app-login-page>
     <app-footer></app-footer>
   </div>
-</div>
+  </router-outlet>
+<!--</div>-->
 
 
 

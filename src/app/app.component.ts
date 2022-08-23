@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   coursesList: CourseInterface[] = [];
   isCoursesListNotEmpty: boolean | undefined;
   isUserAuthenticated = false;
+  IsNewCourseRequired = false;
   constructor(private courseService: CourseService) {
   }
 
@@ -34,5 +35,9 @@ export class AppComponent implements OnInit {
 
   authenticationRequest(isUserAuthenticated: boolean) {
     this.isUserAuthenticated =isUserAuthenticated;
+  }
+
+  setIsNewCourseRequired(IsNewCourseRequired: boolean){
+    this.IsNewCourseRequired=IsNewCourseRequired;
   }
 }
