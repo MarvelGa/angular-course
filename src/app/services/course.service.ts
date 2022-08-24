@@ -13,7 +13,7 @@ export class CourseService {
     this.coursesList = coursesList;
   }
 
-  getList() {
+  getList(): CourseInterface[] {
     return this.coursesList;
   }
 
