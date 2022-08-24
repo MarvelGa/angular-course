@@ -38,4 +38,9 @@ export class CoursePageComponent implements OnInit {
     return parseInt(lastElement[0].id);
   }
 
+  submitAndGoToMainPage(){
+  }
+  goToMainPageWithOutSaving(){
+  }
+
 }
