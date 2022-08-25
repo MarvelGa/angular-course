@@ -5,7 +5,7 @@
 }
 
 .edit-button-div {
-  margin: 3% 10px 3% 50px;
+  margin: 15% 10px 3% 30px;
   width: fit-content;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .delete-button-div {
-  margin: 3% 15px 3% 20px;
+  margin: 15% 15px 3% 20px;
   width: fit-content;
 }
 
@@ -38,7 +38,13 @@
 
 .description-and-buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.button-block{
+  display: flex;
+  flex-direction: row;
 }
 
 .coursesList {

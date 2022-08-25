@@ -1,6 +1,7 @@
-import {Component, OnDestroy, OnInit } from '@angular/core';
-import {MessageService} from "../../services/message.service";
-import { Subscription } from 'rxjs';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {MessageService} from "../services/message.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-section',
@@ -8,11 +9,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent implements OnInit, OnDestroy {
+  @Output() newCourseRequiredEvent = new EventEmitter();
   searchValue: string = '';
-  coursesTitle = "Courses";
   subscription: Subscription | undefined;
-
-  constructor(private message: MessageService) {
+  constructor(private message: MessageService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,5 +30,7 @@ export class SectionComponent implements OnInit, OnDestroy {
 
   printInConsoleLog(value:string) {
     console.log(value);
+    this.router.navigateByUrl('courses/new-course').then(()=>{
+    });
   }
 }

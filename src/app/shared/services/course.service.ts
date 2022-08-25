@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {CourseInterface} from "../types/course.interface";
-import {coursesList} from "../../assets/fake-data";
+import {CourseInterface} from "../../types/course.interface";
+import { coursesList} from "../../../assets/fake-data";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class CourseService {
     this.coursesList = coursesList;
   }
 
-  getList() {
+  getList(): CourseInterface[] {
     return this.coursesList;
   }
 
