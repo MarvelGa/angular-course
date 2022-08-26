@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
@@ -21,6 +21,5 @@ export class LoginComponent implements OnInit {
     console.log(this.email);
     console.log(this.password);
   }
-
 
 }
