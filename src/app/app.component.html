@@ -1,44 +1,16 @@
-<!--<div class="app">-->
-  <div *appIsAuthenticated="!isUserAuthenticated">
+<div *appIsAuthenticated="!getUserAuthentication()">
+<app-header>
+</app-header>
+  <router-outlet></router-outlet>
+<app-footer>
+</app-footer>
+</div>
 
-    <div *appIsRequiredNewCourse="IsNewCourseRequired">
-    <app-header [isUserAuthenticated]="isUserAuthenticated"
-    ></app-header>
-    <app-section
-      (newCourseRequiredEvent)="setIsNewCourseRequired($event)"
-    ></app-section>
-    <app-courses-page
-      [isCoursesListNotEmpty]="isCoursesListNotEmpty"
-      [coursesList]="coursesList"
-      (deleteCourse)="deleteCourse($event)"
-      (editCourse)="editCourse($event)"
-    >
-    </app-courses-page>
-    <app-footer></app-footer>
-    </div>
-
-    <div *appIsRequiredNewCourse="!IsNewCourseRequired">
-      <app-header [isUserAuthenticated]="isUserAuthenticated"
-      ></app-header>
-      <router-outlet></router-outlet>
-      <app-footer></app-footer>
-    </div>
-
-  </div>
-
-  <div *appIsAuthenticated="isUserAuthenticated">
-    <app-header></app-header>
-    <app-login-page
-      (authenticationEvent)="authenticationRequest($event)"
-    >
-    </app-login-page>
-    <app-footer></app-footer>
-  </div>
-
-<!--</div>-->
-
-
-
-
-
-
+<div *appIsAuthenticated="getUserAuthentication()">
+  <app-header>
+  </app-header>
+  <app-login>
+  </app-login>
+  <app-footer>
+  </app-footer>
+</div>

@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
-import { CoursesPageComponent } from "./components/courses-page/courses-page.component";
-import { CoursePageComponent } from "./components/course-page/course-page.component";
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from "@angular/router";
+import {CoursesComponent} from "./pages/courses/courses.component";
+import {CourseComponent} from "./shared/course/course.component";
 
 const routes: Routes = [
-/*  { path: 'courses', component: CoursesPageComponent },*/
-  { path: 'new-course', component: CoursePageComponent }
+  {path: '', redirectTo: 'courses', pathMatch: 'full'},
+  {path: 'courses', component: CoursesComponent, pathMatch: 'full'},
+  {path: 'courses/new-course', component: CourseComponent}
 
 ];
 
@@ -13,4 +14,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
