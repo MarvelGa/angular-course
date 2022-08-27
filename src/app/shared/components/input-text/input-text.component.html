@@ -1,0 +1,10 @@
+<input
+  type="text"
+  name="courseTitle"
+  id="courseTitle"
+  placeholder="Text input"
+  (change)="setText($any($event.target).value)"
+  [value]="text"
+  autocomplete="on"
+  required
+/>

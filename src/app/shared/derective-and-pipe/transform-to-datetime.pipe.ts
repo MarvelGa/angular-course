@@ -12,9 +12,11 @@ export class TransformToDatetimePipe implements PipeTransform {
   }
 
   transform(value: any, ...args: any[]): any {
-    let date = new Date(parseInt(value));
-    let monthName = this.months[date.getMonth()].slice(0, 3);
-    return `${date.getDate()} ${monthName}, ${date.getFullYear()}`
+    if (value!==undefined){
+      let date = new Date(parseInt(value));
+      let monthName = this.months[date.getMonth()].slice(0, 3);
+      return `${date.getDate()} ${monthName}, ${date.getFullYear()}`
+    }
   }
 
 }

@@ -1,0 +1,12 @@
+<input
+  type="number"
+  name="duration"
+  id="duration"
+  min="0"
+  placeholder="minutes"
+  (change)="setData($any($event.target).value)"
+  [value]="data"
+  autocomplete="on"
+  required
+/>
+

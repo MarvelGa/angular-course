@@ -6,12 +6,12 @@ import { TransformToDatetimePipe } from "../../shared/derective-and-pipe/transfo
 import { OrderByCreationDatePipe } from "../../shared/derective-and-pipe/order-by-creation-date.pipe";
 import { FilterSearchPipe } from "../../shared/derective-and-pipe/filter-search.pipe";
 import { SetPlateBorderColorDirective } from "../../shared/derective-and-pipe/set-plate-border-color.directive";
-import { SectionComponent } from "../../shared/section/section.component";
-import { CourseModule } from "../../shared/course/course.module";
 import { CoursesRoutingModule } from "./courses-routing.module";
-import {BreadcrumbsModule} from "../../shared/breadcrumbs/breadcrumbs.module";
-import {CoursesAddModule} from "./courses-add/courses-add.module";
-
+import { BreadcrumbsModule } from "../../shared/components/breadcrumbs/breadcrumbs.module";
+import { CoursesAddModule } from "./courses-add/courses-add.module";
+import { CoursesEditModule } from "./courses-edit/courses-edit.module";
+import { DirectiveAndPipeModule } from "../../shared/derective-and-pipe/directive-and-pipe.module";
+import { SectionModule } from "./section/section.module";
 
 @NgModule({
   declarations: [
@@ -20,15 +20,16 @@ import {CoursesAddModule} from "./courses-add/courses-add.module";
     OrderByCreationDatePipe,
     FilterSearchPipe,
     SetPlateBorderColorDirective,
-    SectionComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    CourseModule,
     CoursesRoutingModule,
     BreadcrumbsModule,
-    CoursesAddModule
+    CoursesAddModule,
+    CoursesEditModule,
+    DirectiveAndPipeModule,
+    SectionModule
   ],
   exports: [
     CoursesComponent,

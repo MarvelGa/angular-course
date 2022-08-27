@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CoursesAddComponent } from './courses-add.component';
 import { ButtonModule } from "../../../shared/components/button/button.module";
 import { InputMinutesModule } from "../../../shared/components/input-minutes/input-minutes.module";
 import { InputTextModule } from "../../../shared/components/input-text/input-text.module";
 import { InputDateModule } from "../../../shared/components/input-date/input-date.module";
 import { TextAreaModule } from "../../../shared/components/text-area/text-area.module";
+import { CoursesEditComponent } from "./courses-edit.component";
 import {DirectiveAndPipeModule} from "../../../shared/derective-and-pipe/directive-and-pipe.module";
 
 @NgModule({
   declarations: [
-    CoursesAddComponent,
+    CoursesEditComponent
   ],
   imports: [
+    CommonModule,
     CommonModule,
     ButtonModule,
     InputMinutesModule,
@@ -21,8 +22,8 @@ import {DirectiveAndPipeModule} from "../../../shared/derective-and-pipe/directi
     TextAreaModule,
     DirectiveAndPipeModule
   ],
-  exports: [
-    CoursesAddComponent
+  exports:[
+    CoursesEditComponent
   ]
 })
-export class CoursesAddModule { }
+export class CoursesEditModule { }

@@ -1,0 +1,11 @@
+#date {
+  width: 25%;
+  line-height: 150%;
+  height: 40px;
+  border-color: lightgrey;
+}
+
+::placeholder {
+  padding: 10px;
+  color: lightgrey;
+}

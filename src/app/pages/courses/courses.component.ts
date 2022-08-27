@@ -3,6 +3,7 @@ import {CourseService} from "../../shared/services/course.service";
 import {CourseInterface} from "../../types/course.interface";
 import {MessageService} from "../../shared/services/message.service";
 import {Subscription} from 'rxjs';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-courses',
@@ -10,14 +11,16 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit, OnDestroy {
-
+  courseId ='';
   noCoursesMessage = 'NO DATA, FEEL FREE TO ADD NEW COURSE';
   coursesList: CourseInterface[] = [];
   searchValue: String | undefined;
   subscription: Subscription | undefined;
   isCoursesListNotEmpty: boolean | undefined;
 
-  constructor(private message: MessageService, private courseService: CourseService) {
+  constructor(private message: MessageService, private courseService: CourseService,
+              private route: ActivatedRoute, private router: Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -47,6 +50,8 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
   editCourse(id: string) {
     console.log(`edit course this id=`, id);
+    this.courseId=id;
+    this.router.navigateByUrl(`courses/${id}`).then(()=>{
+    });
   }
-
 }

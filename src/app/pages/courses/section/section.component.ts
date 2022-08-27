@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import {MessageService} from "../services/message.service";
+import {MessageService} from "../../../shared/services/message.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 
@@ -30,7 +30,7 @@ export class SectionComponent implements OnInit, OnDestroy {
 
   printInConsoleLog(value:string) {
     console.log(value);
-    this.router.navigateByUrl('courses/new-course').then(()=>{
+    this.router.navigateByUrl('courses/new').then(()=>{
     });
   }
 }

@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {CourseInterface} from "../../types/course.interface";
+import { CourseInterface } from "../../types/course.interface";
 import { coursesList} from "../../../assets/fake-data";
 
 @Injectable({
@@ -23,8 +23,7 @@ export class CourseService {
   }
 
   getItemById(id: string) {
-    this.coursesList = this.coursesList.filter(el => el.id === id);
-    return this.getList();
+    return this.coursesList.filter(el => el.id === id)[0];
   }
 
   updateItem(course: CourseInterface) {
