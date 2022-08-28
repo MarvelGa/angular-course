@@ -34,8 +34,9 @@
       <label nameFor="date">Date:</label> <small>*required</small>
     </div>
     <app-input-date
+
       (dateEvent)="getCourseDate($event)"
-      [data]="foundItem.creationDate"
+      [data]=" setData(foundItem.creationDate)"
     ></app-input-date>
     <div class="authors">
       <label nameFor="authors">Authors:</label> <small>*required</small>

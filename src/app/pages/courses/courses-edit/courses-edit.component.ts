@@ -68,4 +68,16 @@ export class CoursesEditComponent implements OnInit {
     this.router.navigateByUrl('/courses').then(() => {
     });
   }
+
+  setData(creationDate: any) {
+    console.log(parseInt(creationDate))
+    let date = new Date(creationDate);
+    let month = (date.getMonth()+1).toString();
+    let day = (date.getDate()).toString();
+    console.log(day);
+    month= month.length===1?'0'+ month: month;
+    day= day.length===1?'0'+ day: day;
+    console.log(`${date.getFullYear()}-${day}-${month}`);
+    return `${date.getFullYear()}-${month}-${day}`;
+  }
 }
