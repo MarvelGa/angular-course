@@ -1,0 +1,10 @@
+<textarea
+  placeholder="Add description"
+  name="courseDescription"
+  id="courseDescription"
+  rows="5"
+  cols="20"
+  (change)="setText($any($event.target).value)"
+  [value]="text"
+  required>
+</textarea>

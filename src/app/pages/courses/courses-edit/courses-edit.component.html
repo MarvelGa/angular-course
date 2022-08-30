@@ -1,0 +1,58 @@
+<div class="container" *ngIf="foundItem">
+  <form class="new-course-form" ngNativeValidate>
+    <p><strong>Edite course</strong></p>
+    <div class="title to-row">
+      <label nameFor="courseTitle">Title:</label> <small>*required</small>
+    </div>
+    <div>
+      <app-input-text
+        (textEvent)="getTitle($event)"
+        [text]="foundItem.title"
+      ></app-input-text>
+    </div>
+    <div class="description to-row">
+      <label>Description:</label> <small>*required</small>
+    </div>
+    <div>
+      <app-text-area
+        (textEvent)="getDescription($event)"
+        [text]="foundItem.description"
+      ></app-text-area>
+    </div>
+    <div class="duration">
+      <label nameFor="duration">Duration:</label> <small>*required</small>
+    </div>
+    <div class="duration-block">
+      <app-input-minutes
+        (minutesEvent)="getDuration($event)"
+        [data]="foundItem.duration"
+      ></app-input-minutes>
+      <span *ngIf="courseDuration">{{courseDuration| duration}}</span> <span
+      *ngIf="!courseDuration">{{foundItem.duration| duration}}</span>
+    </div>
+    <div class="date">
+      <label nameFor="date">Date:</label> <small>*required</small>
+    </div>
+    <app-input-date
+
+      (dateEvent)="getCourseDate($event)"
+      [data]=" setData(foundItem.creationDate)"
+    ></app-input-date>
+    <div class="authors">
+      <label nameFor="authors">Authors:</label> <small>*required</small>
+    </div>
+    <div>
+      <input type="text" id="authors" placeholder="Start typing" autocomplete="on" required/>
+    </div>
+    <app-button
+      (toCoursesListEvent)="goToCourses($event)"
+      (submitEvent)="submitEvent($event)"
+      [nameForSubmitButton]="nameForSubmitButton"
+      [nameForResetButton]="nameForResetButton"
+    ></app-button>
+  </form>
+</div>
+
+
+
+

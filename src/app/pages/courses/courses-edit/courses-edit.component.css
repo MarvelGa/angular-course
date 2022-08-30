@@ -1,0 +1,70 @@
+.container {
+  margin: 5% auto;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+  width: 60%;
+  font-size: 150%;
+  border-radius: 10px;
+  line-height: 150%;
+}
+
+.new-course-form {
+  margin: 10px 20px 30px;
+}
+
+label {
+  font-size: 80%;
+}
+
+input {
+  height: 40px;
+}
+
+small {
+  font-size: 50%;
+}
+
+input, textarea {
+  border-color: lightgrey;
+}
+
+::placeholder {
+  padding: 10px;
+  color: lightgrey;
+}
+
+.duration, .date {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.authors {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.duration-block span{
+  margin-left: 20px;
+  font-size: 70%;
+}
+
+#authors {
+  width: 50%;
+}
+
+#duration, #date {
+  width: 25%;
+}
+
+.to-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#courseTitle, #courseDescription {
+  width: 99%;
+}
+

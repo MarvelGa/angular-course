@@ -1,0 +1,9 @@
+#courseDescription {
+  width: 99%;
+  border: 2px solid lightgrey;
+}
+
+::placeholder {
+  padding: 10px;
+  color: lightgrey;
+}

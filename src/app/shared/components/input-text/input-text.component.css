@@ -1,0 +1,13 @@
+input {
+  border-color: lightgrey;
+  height: 40px;
+}
+
+::placeholder {
+  padding: 10px;
+  color: lightgrey;
+}
+
+#courseTitle{
+  width: 99%;
+}
