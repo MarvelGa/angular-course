@@ -19,12 +19,12 @@ export class AuthService {
     this.isUserAuthenticated = true;
     this.currentUserEmail = email;
     if (email.trim().length > 0 && password.trim().length > 0) {
+      localStorage.setItem('token', this.JWT_TOKEN );
       let user = {id: Date.now().toString(), email: email, password: password, token: this.JWT_TOKEN};
       if (!this.userFakeListInStorage.find((el: { email: string; }) => el.email === email)) {
         console.log(this.userFakeListInStorage)
         this.userFakeListInStorage.push(user);
         localStorage.setItem('setOfFakeUser', JSON.stringify(this.userFakeListInStorage));
-
       }
     }
   }
@@ -34,11 +34,12 @@ export class AuthService {
       console.log(`The user with login= ${this.currentUserEmail} is Logout`);
       this.userFakeListInStorage = this.userFakeListInStorage.filter((user: { email: string; }) => user.email !== this.currentUserEmail);
       localStorage.setItem('setOfFakeUser', JSON.stringify(this.userFakeListInStorage));
+      localStorage.removeItem('token');
     }
   }
 
   isAuthenticated() {
-    return this.isUserAuthenticated;
+    return localStorage.getItem('token');
   }
 
   getUserInfo(id: string) {
