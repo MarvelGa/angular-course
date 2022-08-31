@@ -27,6 +27,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login'])
   }
 
+  getUserInfo() {
+    let userData = localStorage.getItem('email');
+    if (userData!=null){
+      return this.authService.getUserInfo(userData)[0].email;
+    }
+  }
 }
 
 

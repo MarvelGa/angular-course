@@ -20,6 +20,7 @@ export class AuthService {
     this.currentUserEmail = email;
     if (email.trim().length > 0 && password.trim().length > 0) {
       localStorage.setItem('token', this.JWT_TOKEN );
+      localStorage.setItem('email', email);
       let user = {id: Date.now().toString(), email: email, password: password, token: this.JWT_TOKEN};
       if (!this.userFakeListInStorage.find((el: { email: string; }) => el.email === email)) {
         console.log(this.userFakeListInStorage)
@@ -42,7 +43,7 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  getUserInfo(id: string) {
-    return this.userFakeListInStorage.filter((user: { id: string; }) => user.id === id);
+  getUserInfo(email: string) {
+    return this.userFakeListInStorage.filter((user: { email: string; }) => user.email === email);
   }
 }
