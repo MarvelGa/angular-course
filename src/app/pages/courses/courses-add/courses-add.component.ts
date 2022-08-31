@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CourseInterface } from "../../../types/course.interface";
 import { CourseService } from "../../../shared/services/course.service";
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursesAddComponent implements OnInit {
+  title='Courses/New Course'
   nameForSubmitButton='Save';
   nameForResetButton='Cancel';
   courseTitle = '';

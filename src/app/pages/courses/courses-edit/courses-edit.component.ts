@@ -10,6 +10,7 @@ import {CourseInterface} from "../../../types/course.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesEditComponent implements OnInit {
+  title=''
   courseTitle = '';
   courseDescription = '';
   courseDuration: any;
@@ -79,5 +80,9 @@ export class CoursesEditComponent implements OnInit {
     day= day.length===1?'0'+ day: day;
     console.log(`${date.getFullYear()}-${day}-${month}`);
     return `${date.getFullYear()}-${month}-${day}`;
+  }
+
+  setDataTitle(courseName: string) {
+    return `Courses/${courseName}`;
   }
 }

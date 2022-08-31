@@ -1,4 +1,4 @@
-<app-breadcrumbs></app-breadcrumbs>
+<app-breadcrumbs [title]="title"></app-breadcrumbs>
 <app-section></app-section>
 <div *ngIf="isCoursesListNotEmpty && (coursesList | filterCourse : searchValue).length!==0 ; else noDataMessage">
   <div class="container">
