@@ -32,6 +32,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
     if (this.currentUserEmail.trim().length > 0) {
       console.log(`The user with login= ${this.currentUserEmail} is Logout`);
       this.userFakeListInStorage = this.userFakeListInStorage.filter((user: { email: string; }) => user.email !== this.currentUserEmail);
