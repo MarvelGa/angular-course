@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from "../../shared/services/auth.service";
+import { AuthService } from "../../shared/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,31 @@ import { AuthService} from "../../shared/services/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private authService: AuthService) { }
+  userEmail = '';
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  logout() :void {
-    this.authService.logout();
-  }
-  getUserAuthentication(){
-  return this.authService.isUserAuthenticated;
+  getUserAuthentication() {
+    this.userEmail = this.authService.currentUserEmail;
+    return this.authService.isAuthenticated();
   }
 
+  logout(): void {
+    this.userEmail = ''
+    this.authService.logout();
+    this.router.navigate(['login'])
+  }
+
+  getUserInfo() {
+    let userData = localStorage.getItem('email');
+    if (userData!=null){
+      return this.authService.getUserInfo(userData)[0].email;
+    }
+  }
 }
+
+

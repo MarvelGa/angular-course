@@ -5,6 +5,7 @@ import { CoreModule } from "./core/core.module";
 import { AuthenticationDirective } from "./shared/derective-and-pipe/authentication.directive";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundModule } from "./pages/page-not-found/page-not-found.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    PageNotFoundModule
   ],
   providers: [],
   exports: [],

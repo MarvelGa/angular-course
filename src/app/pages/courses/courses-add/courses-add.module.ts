@@ -6,7 +6,8 @@ import { InputMinutesModule } from "../../../shared/components/input-minutes/inp
 import { InputTextModule } from "../../../shared/components/input-text/input-text.module";
 import { InputDateModule } from "../../../shared/components/input-date/input-date.module";
 import { TextAreaModule } from "../../../shared/components/text-area/text-area.module";
-import {DirectiveAndPipeModule} from "../../../shared/derective-and-pipe/directive-and-pipe.module";
+import { DirectiveAndPipeModule } from "../../../shared/derective-and-pipe/directive-and-pipe.module";
+import { BreadcrumbsModule } from "../../../shared/components/breadcrumbs/breadcrumbs.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {DirectiveAndPipeModule} from "../../../shared/derective-and-pipe/directi
     InputTextModule,
     InputDateModule,
     TextAreaModule,
-    DirectiveAndPipeModule
+    DirectiveAndPipeModule,
+    BreadcrumbsModule
   ],
   exports: [
     CoursesAddComponent

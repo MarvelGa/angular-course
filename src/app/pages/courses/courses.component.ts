@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit, OnDestroy {
+  title='Courses'
   courseId ='';
   noCoursesMessage = 'NO DATA, FEEL FREE TO ADD NEW COURSE';
   coursesList: CourseInterface[] = [];
