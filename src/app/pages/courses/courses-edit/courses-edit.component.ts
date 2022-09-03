@@ -61,13 +61,11 @@ export class CoursesEditComponent implements OnInit {
     };
     this.courseService.updateItem(course);
     alert(`The ${course.title} course has been successfully edited`);
-    this.router.navigateByUrl("courses").then(() => {
-    });
+    this.router.navigateByUrl("courses");
   }
 
   goToCourses(event: any) {
-    this.router.navigateByUrl('/courses').then(() => {
-    });
+    this.router.navigateByUrl('courses');
   }
 
   setData(creationDate: any) {
