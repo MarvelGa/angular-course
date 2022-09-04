@@ -76,7 +76,7 @@ describe('CoursesEditComponent', () => {
   });
 
   it('should update course and redirect to "courses" page', () => {
-    component.submitEvent('update')
+    component.submitEvent('update');
     spyOn(service, "updateItem");
     let router = fixture.debugElement.injector.get(Router);
     const spy = router.navigateByUrl as jasmine.Spy;
