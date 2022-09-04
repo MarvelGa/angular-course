@@ -6,19 +6,19 @@ describe('(CourseService)', () => {
   it('should get list of courses', () => {
     const courseService = new CourseService();
     const result = courseService.getList();
-    expect(result.length).toBe(4)
+    expect(result).not.toBeNull();
   });
 
   it('should add a new course to the list of courses', () => {
-    let newCourse = {} as CourseInterface;
-    newCourse = {
+    let newCourse = {
       id: '5',
       title: 'Test course',
       creationDate: 1668898800000,
       duration: '90',
       description: 'Test — один из наиболее распространенных языков программирования в мире.',
       topRated: false
-    }
+    } as CourseInterface;
+
     const courseService = new CourseService();
     const result = courseService.createCourse(newCourse);
     expect(result.length).toBe(5)
@@ -33,7 +33,7 @@ describe('(CourseService)', () => {
 
   it('should update course', () => {
     const courseService = new CourseService();
-    let updatedCourse = {} as CourseInterface;
+    let updatedCourse ;
     let courseUpdateId = '1';
     updatedCourse = {
       id: courseUpdateId,
