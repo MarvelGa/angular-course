@@ -4,6 +4,7 @@ import { HeaderComponent } from './header.component';
 import {Router} from "@angular/router";
 import {AuthService} from "../../shared/services/auth.service";
 import {FormsModule} from "@angular/forms";
+import {of} from "rxjs";
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
