@@ -18,6 +18,5 @@ export class TextAreaComponent implements OnInit {
   setText(text: string): void {
     this.text = text;
     this.textEvent.emit(this.text);
-  /*  this.text='';*/
   }
 }

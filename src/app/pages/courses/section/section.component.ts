@@ -30,7 +30,6 @@ export class SectionComponent implements OnInit, OnDestroy {
 
   printInConsoleLog(value:string) {
     console.log(value);
-    this.router.navigateByUrl('courses/new').then(()=>{
-    });
+    this.router.navigateByUrl('courses/new');
   }
 }

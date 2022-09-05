@@ -1,16 +1,33 @@
-import { TestBed } from '@angular/core/testing';
+import {AuthService} from "../services/auth.service";
+import {AuthGuard} from './auth.guard';
+import {Route, Router, UrlSegment} from "@angular/router";
 
-import { AuthGuard } from './auth.guard';
-
-describe('AuthGuard', () => {
-  let guard: AuthGuard;
-
+describe('AuthGuard (isolated)', () => {
+  let authGuard: AuthGuard;
+  let authService: AuthService;
+  let routerSpy: jasmine.SpyObj<Router>;
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    guard = TestBed.inject(AuthGuard);
+    routerSpy = jasmine.createSpyObj<Router>('Router', ['navigate']);
+    authService = new AuthService();
+    authGuard = new AuthGuard(authService, routerSpy);
   });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
+  it('should return false if user not is authenticated', () => {
+    localStorage.removeItem('token');
+    let path = "/courses"
+    const fakeRoute: Route = {path};
+    const fakeUrlSegment = {path} as UrlSegment;
+    const canLoad = authGuard.canLoad(fakeRoute, [fakeUrlSegment]);
+    expect(canLoad).toBeFalse();
+  });
+
+  it('should return true if user is authenticated', () => {
+    localStorage.setItem('token', 'TOKEN');
+    let path = "/courses"
+    const fakeRoute: Route = {path};
+    const fakeUrlSegment = {path} as UrlSegment;
+    const canLoad = authGuard.canLoad(fakeRoute, [fakeUrlSegment]);
+    expect(canLoad).toBeTrue();
   });
 });
+

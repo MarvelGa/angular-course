@@ -56,8 +56,9 @@ export class CoursesAddComponent implements OnInit {
     this.courseService.createCourse(newCourse);
     console.log(this.courseService.getList());
     alert(`The new ${newCourse.title} course has been successfully added`);
-    this.router.navigateByUrl('/courses').then(()=>{
-    });
+    this.router.navigateByUrl('/courses');
+/*    this.router.navigateByUrl('/courses').then(()=>{
+    });*/
   }
 
   getLastId(): number {
@@ -67,7 +68,8 @@ export class CoursesAddComponent implements OnInit {
   }
 
   goToCourses(event: any) {
-    this.router.navigateByUrl('/courses').then(()=>{
-    });
+    this.router.navigateByUrl('/courses');
+ /*   this.router.navigateByUrl('/courses').then(()=>{
+    });*/
   }
 }

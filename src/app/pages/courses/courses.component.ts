@@ -52,7 +52,6 @@ export class CoursesComponent implements OnInit, OnDestroy {
   editCourse(id: string) {
     console.log(`edit course this id=`, id);
     this.courseId=id;
-    this.router.navigateByUrl(`courses/${id}`).then(()=>{
-    });
+    this.router.navigateByUrl(`courses/${id}`);
   }
 }
